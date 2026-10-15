@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szkoła Nauki Jazdy - Piotr Łowicz</title>
+    <title>Szkoła Jazdy Piotr - Łowicz</title>
     <style>
         :root {
             --primary: #1a3c6e;
@@ -20,261 +20,299 @@
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
-            background: var(--light);
+            background-image: 
+                linear-gradient(rgba(245, 247, 250, 0.9), rgba(245, 247, 250, 0.9)),
+                url('https://source.unsplash.com/1600x900/?driving-school,traffic-cones');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         header {
-            background: var(--primary);
+            background-color: var(--primary);
             color: white;
-            padding: 20px 5%;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        header .logo {
-            font-size: 1.5rem;
+        .logo {
             font-weight: bold;
+            font-size: 1.5rem;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--accent);
+            margin-left: 1.5rem;
         }
 
         .hero {
-            background: linear-gradient(rgba(26, 60, 110, 0.85), rgba(26, 60, 110, 0.85)), url('https://images.unsplash.com/photo-1541899299-42b78a05fcf5?q=80&w=1200') no-repeat center center/cover;
+            background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 100px 5%;
+            padding: 3rem 1rem;
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
-            font-size: 2.6rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
+        .cta-button {
             display: inline-block;
-            background: var(--accent);
+            background-color: var(--accent);
             color: var(--dark);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
+            padding: 1rem 2rem;
             font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            background: #e6a300;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
         }
 
         section {
-            padding: 60px 5%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
         }
 
         h2 {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 30px;
-            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .card {
+        .about-text {
             background: white;
-            border-radius: 12px;
-            padding: 30px 20px;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .card h3 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .contact-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .contact-info, form {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .contact-info ul {
-            list-style: none;
-        }
-
-        .contact-info li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info a {
-            color: var(--primary);
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        form {
+        .category-card {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        input, textarea {
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
+        .category-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
         }
 
-        textarea {
-            min-height: 120px;
-            resize: vertical;
+        .category-content {
+            padding: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
         }
 
-        form button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
+        .category-content h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
-        form button:hover {
-            background: #122c53;
+        .schedule, .hours {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 1rem;
+        }
+
+        .schedule ul, .hours ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .schedule li, .hours li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         footer {
-            background: var(--primary);
+            background-color: var(--primary);
             color: white;
             text-align: center;
-            padding: 25px 5%;
-            font-size: 0.9rem;
+            padding: 1rem 0;
+            margin-top: 2rem;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            nav a { margin-left: 10px; }
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #cookie-consent-btn {
+            background-color: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Szkoła Jazdy Piotr</div>
         <nav>
-            <a href="#about">O nas</a>
-            <a href="#categories">Kategorie</a>
-            <a href="#contact">Kontakt</a>
+            <div class="logo">Szkoła Jazdy Piotr</div>
+            <div>
+                <a href="#o-nas">O nas</a>
+                <a href="#kategorie">Kategorie</a>
+                <a href="#terminy">Terminy</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
         </nav>
     </header>
 
-    <div class="hero">
-        <h1>Szkoła Nauki Jazdy Łowicz</h1>
-        <p>Rozpocznij swoją przygodę z kierownicą pod okiem instruktora Piotra. Bezstresowa atmosfera i wysoka zdawalność.</p>
-        <a href="#contact" class="btn">Zapisz się</a>
-    </div>
+    <main>
+        <section class="hero">
+            <h1>Szkoła Nauki Jazdy Łowicz</h1>
+            <p>Rozpocznij swoją przygodę z kierownicą pod okiem instruktora Piotra.</p>
+            <a href="#kontakt" class="cta-button">Zapisz się</a>
+        </section>
 
-    <section id="about">
-        <h2>O nas</h2>
-        <p class="about">Nazywam się Piotr i jestem wieloletnim instruktorem nauki jazdy. Moim celem jest nie tylko przygotowanie Cię do zdania egzaminu państwowego, ale przede wszystkim nauczenie Cię bezpiecznego i pewnego poruszania się po drogach. Do każdego kursanta podchodzę indywidualnie.</p>
-    </section>
+        <section id="o-nas">
+            <h2>O nas</h2>
+            <div class="about-text">
+                <p>Nazywam się Piotr i jestem wieloletnim instruktorem nauki jazdy. Moim celem jest nie tylko przygotowanie Cię do zdania egzaminu państwowego, ale przede wszystkim nauczenie Cię bezpiecznego i pewnego poruszania się po drogach. Do każdego kursanta podchodzę indywidualnie.</p>
+            </div>
+        </section>
 
-    <section id="categories">
-        <h2>Oferowane Kategorie</h2>
-        <div class="categories-grid">
-            <div class="card">
-                <h3>Kategoria B</h3>
-                <p>Samochody osobowe. Szkolenie na najnowszych modelach aut, dokładnie takich, jakie spotkasz na egzaminie.</p>
+        <section id="kategorie">
+            <h2>Oferowane Kategorie</h2>
+            <div class="categories">
+                <div class="category-card">
+                    <div class="category-image" style="background-image: url('https://source.unsplash.com/400x300/?modern-car,driving');"></div>
+                    <div class="category-content">
+                        <h3>Kategoria B</h3>
+                        <p>Samochody osobowe. Szkolenie na najnowszych modelach aut, dokładnie takich, jakie spotkasz na egzaminie.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image" style="background-image: url('https://source.unsplash.com/400x300/?motorcycle,riding');"></div>
+                    <div class="category-content">
+                        <h3>Kategoria A</h3>
+                        <p>Motocykle. Profesjonalnie przygotowany plac manewrowy i jazdy w ruchu miejskim.</p>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image" style="background-image: url('https://source.unsplash.com/400x300/?steering-wheel,driving-lesson');"></div>
+                    <div class="category-content">
+                        <h3>Jazdy doszkalające</h3>
+                        <p>Potrzebujesz dodatkowych godzin przed egzaminem lub chcesz poczuć się pewniej za kółkiem? Zapraszam!</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Kategoria A</h3>
-                <p>Motocykle. Profesjonalnie przygotowany plac manewrowy i jazdy w ruchu miejskim.</p>
-            </div>
-            <div class="card">
-                <h3>Jazdy doszkalające</h3>
-                <p>Potrzebujesz dodatkowych godzin przed egzaminem lub chcesz poczuć się pewniej za kółkiem? Zapraszam!</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact">
-        <h2>Skontaktuj się z nami</h2>
-        <div class="contact-wrap">
-            <div class="contact-info">
-                <h3>Dane kontaktowe</h3>
+        <section id="terminy">
+            <h2>Harmonogram Szkoleń i Godziny Pracy</h2>
+            <div class="schedule">
+                <h3>Najbliższe Kursy</h3>
                 <ul>
-                    <li>Tel: <a href="tel:+48500600700">+48 500 600 700</a></li>
-                    <li>E-mail: <a href="mailto:biuro@szkolajazdy-piotr.pl">biuro@szkolajazdy-piotr.pl</a></li>
-                    <li>Adres: ul. Przykładowa 1, 99-400 Łowicz</li>
-                    <li><a href="https://facebook.com" target="_blank">Odwiedź nas na Facebooku</a></li>
+                    <li>Kurs Kategoria B – Start: 2 listopada</li>
+                    <li>Kurs Kategoria A – Start: 15 listopada</li>
                 </ul>
             </div>
-            <form action="#">
-                <input type="text" placeholder="Twoje imię i nazwisko" required>
-                <input type="email" placeholder="Twój e-mail" required>
-                <textarea placeholder="Twoja wiadomość..." required></textarea>
-                <button type="submit">Wyślij wiadomość</button>
-            </form>
-        </div>
-    </section>
+            <div class="hours">
+                <h3>Godziny Pracy Biura</h3>
+                <ul>
+                    <li>Poniedziałek – Piątek: 9:00 – 17:00</li>
+                    <li>Sobota: 9:00 – 13:00</li>
+                    <li>Niedziela: Zamknięte</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <h2>Skontaktuj się z nami</h2>
+            <div class="contact">
+                <p><strong>Dane kontaktowe</strong></p>
+                <p>Tel: <a href="tel:+48500600700">+48 500 600 700</a></p>
+                <p>E-mail: <a href="mailto:biuro@szkolajazdy-piotr.pl">biuro@szkolajazdy-piotr.pl</a></p>
+                <p>Adres: ul. Przykładowa 1, 99-400 Łowicz</p>
+                <p><a href="https://facebook.com" target="_blank">Odwiedź nas na Facebooku</a></p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Szkoła Nauki Jazdy Piotr Łowicz. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <span>Ta strona używa plików cookies, aby zapewnić najlepszą jakość korzystania z serwisu.</span>
+        <button id="cookie-consent-btn">Rozumiem</button>
+    </div>
+
+    <script>
+        // JavaScript for Cookie Banner
+        const cookieBanner = document.getElementById('cookie-banner');
+        const cookieBtn = document.getElementById('cookie-consent-btn');
+
+        cookieBtn.addEventListener('click', () => {
+            cookieBanner.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
